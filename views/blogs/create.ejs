@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body>
+    <div class="container">
+
+        <%- include('../partials/nav') %>
+    
+        <div class="create-blogs-content">
+            <form action="/blogs" method="POST">
+                <label for="title">News Headline</label>
+                <input type="text" id="title" name="title" required>
+                <label for="summary">News Summary</label>
+                <input type="text" id="summary" name="summary" required>
+                <label for="body">News Content</label>
+                <textarea id="body" required name="body"></textarea>
+                <button>submit</button>
+            </form>
+        </div>
+        <%- include('../partials/footer') %>
+    </div>
+
+</body>
+</html> 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body>
+    <div class="container">
+
+        <%- include('../partials/nav') %>
+        <div class="articles">
+            <h2 class="articles_heading">All Blogs</h2>
+
+            <ul class="article-ul">
+
+                <% if(blogs.length > 0){ %>
+                    <% blogs.forEach( blog => { %>
+                        <li>
+                            <a href="/blogs/<%= blog._id %>">
+                                <span class="articles__heading"><%= blog.title %></>
+                                <span class="article-list__date"><%= blog.createdAt.toDateString() %></span>
+                            </a>
+                        </li>
+                    <% }) %>
+                        
+                <% } else {%>
+                    <p>No News for now, visit later...</p>
+                    <% } %>
+            </ul>
+    
+        </div>
+        <%- include('../partials/footer') %>
+    </div>
+ 
+</body>
+</html>
